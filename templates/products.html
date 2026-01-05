@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %} Products {% endblock %}
+{% block content %}
+  <div class="search-wrapper mt-4">
+    <div class="search-container">
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1E0C06"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+      </span>
+      <form>
+        <input type="text" placeholder="Search..." class="search-input">
+        </div>
+        <button type="submit" class="search-button">Search</button>
+    </form>
+  </div>
+</section>
+<!-- MAIN PRODUCT SECTION -->
+<section class="product-section collection-section">
+    <h2 class="heading text-center">COLLECTION</h2>
+    <div class="collection-wrapper">
+        <div class="collection-grid">
+            {% for category in categories %}
+            <div class="collection-item">
+                <div class="img-container">
+                    <img src="{{ url_for('static', filename='images/' ~ category.img_url) }}" alt="{{ category.name }}">
+                </div>
+                <p class="item-name">{{ category.name.capitalize() }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!--WIP-->
+<section class="product-section">
+      <h1 class="heading mt-3 text-center">BEST SELLING ITEMS</h1>
+      <div class="container-fluid row mt-4 mb-5 pb-5">
+
+        <div class="col-md-3 col-sm-6 mb-4"> <!--col-md-3 makes 4 cards per row on med screens and sm-6 is 2 cards -->
+            <div class="card h-100 text-center"> <!-- card is a wrapper that adds a border, rounded corners and shadow -->
+              <!-- h-100 makes the card take up 100% height of its parent column -->
+            <img onclick="window.location.href='{{ url_for('order') }}';" src="{{ url_for('static', filename='images/Placeholder-3.png.png') }}" class="card-img-top cursor-pointer" alt="Placeholder"> <!-- card-img-top puts the image above the content -->
+            <div class="card-body">
+                <h5 class="card-title">placeholder</h5>
+                <p class="card-text">£250</p>
+                <button class="btn btn-warning">ADD TO CART</button>
+               <!-- card-footer can be used to add links or metadata -->
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card h-100 text-center">
+            <img onclick="window.location.href='{{ url_for('order') }}';" src="{{ url_for('static', filename='images/Placeholder-3.png.png') }}" class="card-img-top cursor-pointer" alt="Placeholder">
+            <div class="card-body"> <!-- card-body adds spacing inside the card for text and buttons and other elements -->
+                <h5 class="card-title">placeholder</h5> <!-- styles the heading inside the card (bigger and bold) -->
+                <p class="card-text">£250</p> <!-- paragraph styling -->
+                <button class="btn btn-warning">ADD TO CART</button>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card h-100 text-center">
+            <img onclick="window.location.href='{{ url_for('order') }}';" src="{{ url_for('static', filename='images/Placeholder-3.png.png') }}" class="card-img-top cursor-pointer" alt="Placeholder">
+            <div class="card-body">
+                <h5 class="card-title">placeholder</h5>
+                <p class="card-text">£250</p>
+                <button class="btn btn-warning">ADD TO CART</button>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card h-100 text-center">
+            <img onclick="window.location.href='{{ url_for('order') }}';" src="{{ url_for('static', filename='images/Placeholder-3.png.png') }}" class="card-img-top cursor-pointer" alt="Placeholder">
+            <div class="card-body">
+                <h5 class="card-title">placeholder</h5>
+                <p class="card-text">£250</p>
+                <button class="btn btn-warning">ADD TO CART</button>
+            </div>
+            </div>
+        </div>
+        
+      </div>  
+</section>
+
+{% endblock %}

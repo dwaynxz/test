@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+<!-- Background Image Section -->
+  <section class="hero-section">
+    <div class="container d-flex justify-content-end mt-3">
+      <div class="home-intro-box">
+        <div class="home-intro-grouped-text">
+        <span class="home-intro-text mt-5">Handcrafted wood</span>
+        <span class="home-intro-text">creations, inspired by</span>
+        <span class="home-intro-text">the wild heart of</span>
+        <span class="home-intro-text">Africa.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- solid wood products section (needs images)-->
+  <section class="section">
+    <h1 class="heading mt-3 ms-2" >Solid Wood Products</h1>
+        <div class="container-fluid mt-4 py-5">
+          <div class="row">
+
+            <div class="col-md-3">
+              <img src="{{url_for('static', filename='images/Placeholder-1.png.png')}}"  class="img-fluid mb-3" alt="Image 1">
+            </div>
+
+            <div class="col-md-3">
+              <img src="{{url_for('static', filename='images/Placeholder-2.png.png')}}" class="img-fluid mb-3 circle-image" alt="Image 2">
+              <img src="{{url_for('static', filename='images/Placeholder-3.png.png')}}"  class="img-fluid circle-image" alt="Image 3">
+            </div>
+
+            <div class="col-md-3">
+              <img src="{{url_for('static', filename='images/Placeholder-4.png.png')}}"  class="img-fluid mb-3" alt="Image 4">
+            </div>
+
+            <div class="col-md-3">
+              <img src="{{url_for('static', filename='images/Placeholder-5.png.png')}}"  class="img-fluid mb-3" alt="Image 5">
+              <img src="{{url_for('static', filename='images/Placeholder-6.png.png')}}"  class="img-fluid" alt="Image 6">
+            </div>
+          </div>
+        </div>
+  </section>
+{% endblock %}
